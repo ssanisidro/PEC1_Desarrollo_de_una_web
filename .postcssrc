@@ -1,12 +1,5 @@
-<<<<<<< HEAD
 {
   "plugins": {
     "autoprefixer": true
   }
-=======
-{
-  "plugins": {
-    "autoprefixer": true
-  }
->>>>>>> 90e2dc566b122c5a8466025e26a209dadb8d000f
 }
