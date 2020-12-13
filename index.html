@@ -15,7 +15,7 @@
     <header>
         <div class="container">
             <div class="logo">
-                <p class="isologo"><a href="index.html"><img src="img/logo-castelao.png" alt="Página web de castelao">Castelao</a></p>
+              <p class="isologo"><a href="index.html">Castelao</a></p>
             </div>
             <div class="menu">
                 <nav>
@@ -31,12 +31,25 @@
     <main id="main">
       <h1>Alfonso Daniel Rodríguez Castelao</h1>
       <div  class="imgportada">
-        <img src="img/castelaocorreos.jpg" alt="imagen del sello de Castelao">
-        <img src="img/prueba1.jpg" alt="imagen del sello de Castelao">
+        <img src="img/castelaocorreos.jpg"
+        srcset="
+          img/castelaocorreos-mobile.jpg 480w,
+          img/castelaocorreos-medium.jpg 960w,
+          img/castelaocorreos-large.jpg 1440w"
+        sizes="
+          (max-width: 992px) 480px,
+          (max-width: 1200px) 960px,
+           1440px"
+        alt="Sello en homenaje a Castelao.">
         <p class="licencia">Imágen de <a href="https://pxhere.com/es/photo/588606">Jose Luis Cernadas Iglesias</a></p>
       </div>
       <div class="castelao">
-        <img src="img/Castelao_Rianxo_Galicia.jpg" alt="Alfonso Castelao en 1940">
+        <img src="img/Castelao_Rianxo_Galicia.jpg" srcset="
+        img/Castelao_Rianxo_Galicia_mobile.jpg 440w,
+        img/Castelao_Rianxo_Galicia.jpg 684w"
+      sizes="
+        (max-width: 440px) 420px,
+        684px" alt="Alfonso Castelao en 1940">
         <div>
           <h2>¿Quién fue Castelao?</h2>
           <p>Nacido en Rianxo en 1886, Castelao fue político, escritor y pintor español. Considerado uno de los principales creadores de la prosa gallega moderna junto con Ramón Otero Pedrayo, fue asimismo el máximo representante del nacionalismo gallego de signo progresista.</p>
@@ -79,8 +92,8 @@
           </ul> 
           </blockquote>
           <div>
-            <a class="anterior"><i class="fas fa-angle-double-left"></i></a>
-            <a class="siguiente"><i class="fas fa-angle-double-right"></i></a>
+            <a class="anterior"><span class="fas fa-angle-double-left"></span></a>
+            <a class="siguiente"><span class="fas fa-angle-double-right"></span></a>
           </div>
         </div> 
       </div>
@@ -92,6 +105,11 @@
               <li><a href="">Aviso legal</a></li>
               <li><a href="">Política de privacidad</a></li>
           </ul>
+          <div>
+            <p> Web en memoria do gran Alfonso Castelao</p>
+            <img class="clip" src="img/enmemoria.png" height="200" alt="">
+            <p class="licencia">Imágen de<a href="https://commons.wikimedia.org/wiki/File:Castelao_falando_en_Montevideo_nun_acto_de_Galeuzca_en_1945.jpg">Unknown author</a>, Public domain, via Wikimedia Commons</p>
+          </div>
           <ul>
               <li><a href="">Facebook</a></li>
               <li><a href="">Twitter</a></li>
@@ -101,7 +119,7 @@
       <div id="autoria">
           <p>2020 &copy; Sergio Sanisidro García</p>
           <p>Herramientas HTML y CSS</p>
-          <a id="icono" href="#main"><i class="fas fa-angle-up"></i></a>
+          <a id="icono" href="#main"><span class="fas fa-angle-up"></span></a>
       </div>
   </footer> 
 </body>

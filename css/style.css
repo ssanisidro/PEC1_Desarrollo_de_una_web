@@ -15,10 +15,7 @@ body {
 	line-height: 1.5;
 	background-color: #ffffff;
 }
-header,footer,nav{
-  /*font-family: 'Montserrat', sans-serif;
-  */
-}
+
 
 h1,h2,h3,h4 {   
     font-weight: bold;
@@ -56,8 +53,29 @@ abbr {
 
 h1 {
     font-size: 2.5rem;
-    margin-left: 10%;
-    margin-bottom: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+@media (min-width: 768px) {
+    h1 {
+		margin-left: 10%;
+		text-align: left;
+    }
+}
+  
+@media (min-width: 992px) {
+    h1 {
+		margin-left: 10%;
+		text-align: left;
+    }
+}
+  
+@media (min-width: 1200px) {
+    h1 {
+		margin-left: 10%;
+		text-align: left;
+    }
 }
 
 
@@ -74,6 +92,10 @@ h3 {
 h4{
 	font-size: 1.4rem;
 	margin-bottom: 1rem;
+}
+
+strong{
+	font-weight: bold;
 }
 
 /*Clase para esconder un elemento que será visible únicamente para los lectores de pantalla (aplicado para mejorar la accesibilidad)*/
@@ -148,21 +170,38 @@ main {
 }
 
 /**ISOLOGO**/
-p.isologo {
-	margin-top: 5px;
-	margin-bottom: 10px;
-  font-size: 35px;
+
+.logo img{
+	width: 50%;
+	display: inline;
 }
 
-p.isologo a {
+p.isologo {
+	margin-top: 10px;
+	margin-bottom: 10px;
+  	font-size: 35px;
+}
+
+.logo a {
     color: inherit;
 	border: none;
 	font-weight: bold;
-	font-family: 'Merriweather', sans-serif;
+	font-family: 'Special Elite', sans-serif;
 }
 
-p.isologo a:hover {
+.logo a:hover {
     color:#353d92;
+}
+
+p.isologo::before {
+	background-image: url(../img/logopropiocastelao.svg);
+	background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    width: 4rem; 
+    height: 2rem;
+    margin-right: 15px;
+    content:"";
 }
 
 /********
@@ -223,6 +262,11 @@ nav li a.activo::before {
 		display: inline;
 		margin: 5px;
 	}
+
+	header ul{
+		margin-top: 25px;
+	}
+
 	.logo{
 		grid-column: 1;
 		grid-row: 1;
@@ -249,6 +293,9 @@ nav li a.activo::before {
 	header li{
 		display: inline;
 		margin: 10px;
+	}
+	header ul{
+		margin-top: 0px;
 	}
 	.logo{
 		grid-column: 1;
@@ -303,6 +350,23 @@ div#autoria a#icono{
   	display: inline-block;
 	width: 95%;
 }
+
+.clip{
+	clip-path: ellipse(39% 40% at 50% 50%);
+	animation: 5s gafas infinite alternate ease-in-out;
+}
+
+@keyframes gafas {
+	from {
+		-webkit-clip-path: ellipse(39% 40% at 50% 50%);
+		clip-path: ellipse(39% 40% at 50% 50%);
+	}
+	
+	to {
+		-webkit-clip-path: ellipse(24% 9% at 51% 48%);
+		clip-path: ellipse(24% 9% at 51% 48%);
+	}
+  }
   
 @media (min-width: 992px) {
     footer li {
@@ -320,7 +384,7 @@ div#autoria a#icono{
 	}
 	div.footer {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 	div#autoria{
 		text-align: left;
@@ -353,7 +417,7 @@ div#autoria a#icono{
 	}
 	div.footer {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 	div#autoria{
 		text-align: left;
@@ -375,6 +439,7 @@ div#autoria a#icono{
 .portada img{
 	width: 40%;
 	height: 40%;
+	animation: fade 1.5s ease-in-out;
 }
 .portada p{
 	font-size: 1.5rem;
@@ -390,6 +455,7 @@ div.imgportada img{
 	display: block;
 	margin: auto;
 }
+
 /* código para citar las imágenes o los recursos usados*/
 
 .licencia{
@@ -447,10 +513,14 @@ div.imgportada img{
   }
   
   /* color de fondo cuando estamos con el cursor sobre el elemento */
-  .anterior:hover, .siguiente:hover {
+  #icono span{
+	  color: white;
+	  transition: 0.6s ease;
+  }
+  
+  .anterior:hover, .siguiente:hover, #icono span:hover {
 	color: #353d92;
 	transform: scale(1.4);
-
   }
 
   .slider ul li {
@@ -481,10 +551,23 @@ blockquote{
  }
 
  div.castelao img{
-   max-width: 80%;
+   max-width: 50%;
    height: auto;
    margin: 0px auto;
+   animation: entrada-izquierda 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) 1.4s both;
  }
+ @keyframes entrada-izquierda {
+	0% {
+	  transform: translateX(-1000px);
+	  opacity: 0;
+	}
+	100% {
+	  transform: translateX(0);
+	  opacity: 1;
+	}
+  }
+  
+
   
  .castelao div{
 
@@ -515,8 +598,7 @@ blockquote{
    }
   
    div.castelao img{
-	width: auto;
-	height: auto;
+	width: 30%;
 	margin: 0px auto;
    }
    div.imgportada img{
@@ -610,15 +692,66 @@ article h3{
 }
 
 article img{
-	width: 100%;
+	width: 90%;
 	max-height: 100%;
 }
 
+.obras img{
+	width: 70%;
+	display: block;
+	margin: auto;
+	animation: fade 1.5s ease-in-out;
+}
+
+.obras p.licencia{
+	margin-right: 15%;
+}
+
+.recomendacion img{
+	width: 55%;
+	display: block;
+	margin: auto;
+}
+
+.recomendacion cite{
+	margin: auto;
+	display: block;
+	text-align: center;
+}
+
+.recomendacion p.licencia{
+	margin-right: 25%;
+}
+
+p#detalle{
+	animation: detalle 0.5s ease-in-out infinite both;
+	font-weight: bold;
+}
+
+@keyframes detalle{
+	0% {
+	  transform: scale(1.0);
+
+	}
+	50% {
+	  transform: scale(1.1);
+	  color: red;
+	}
+	100% {
+	  transform: scale(1.0);
+	}
+  }
+  
+  
 
 @media (min-width: 992px) {
 
 	article li{
 		max-width: 100%;
+	}
+	article img{
+		width: 100%;
+		max-height: 100%;
 	}
 }
 
@@ -627,6 +760,10 @@ article img{
 		max-width: 100%;
 	}
 	
+	article img{
+		width: 100%;
+		max-height: 100%;
+	}
 }
 
 @media (min-width: 992px) {
@@ -668,13 +805,28 @@ article img{
 
 /****Página detalle***/
 
-section.ficha img{
-	width: auto;
-	height: auto;
-}
 
 section.ficha{
 	margin-top: 50px;
+}
+
+section.ficha img{
+	animation: imgdestacada 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+@keyframes imgdestacada {
+	0% {
+	  transform: scale(0);
+	  opacity: 1;
+	}
+	100% {
+	  transform: scale(1);
+	  opacity: 1;
+	}
+  }
+
+.medalla{
+	-webkit-clip-path: circle(50.8% at 46% 51%);
+	clip-path: circle(50.8% at 46% 51%);
 }
 
 section h2{
